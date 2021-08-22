@@ -1,0 +1,6 @@
+devel_space: /home/chshy/ros_ws/opencv/devel
+install: false
+install_space: /home/chshy/ros_ws/opencv/install
+profile: default
+source_space: /home/chshy/ros_ws/opencv/src
+workspace: /home/chshy/ros_ws/opencv

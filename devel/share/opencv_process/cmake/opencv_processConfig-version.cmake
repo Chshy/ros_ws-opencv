@@ -1,0 +1,1 @@
+/home/chshy/ros_ws/opencv/devel/.private/opencv_process/share/opencv_process/cmake/opencv_processConfig-version.cmake

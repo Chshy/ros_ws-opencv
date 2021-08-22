@@ -1,0 +1,7 @@
+<launch>
+    <!-- 启动D435相机节点 -->
+    <!-- <include file="$(find realsense2_camera)/launch/rs_camera.launch"/> -->
+
+    <!-- 启动自己 -->
+    <node name="opencv_process_node" pkg="opencv_process" type="opencv_process_node" output="screen"/>
+</launch>

@@ -1,0 +1,1 @@
+/home/chshy/ros_ws/opencv/devel/.private/opencv_process/lib/pkgconfig/opencv_process.pc

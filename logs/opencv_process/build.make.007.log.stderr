@@ -1,0 +1,32 @@
+In file included from [01m[K/home/chshy/ros_ws/opencv/src/opencv_process/src/opencv_process_node.cpp:7:0[m[K:
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:32:58:[m[K [01;31m[Kerror: [m[Kdefault argument given for parameter 4 of ‘[01m[Kd435_subscriber::d435_subscriber(ros::NodeHandle, const string&, const string&, uint32_t)[m[K’ [[01;31m[K-fpermissive[m[K]
+                                  uint32_t queue_size = 10[01;31m[K)[m[K
+                                                          [01;31m[K^[m[K
+In file included from [01m[K/home/chshy/ros_ws/opencv/src/opencv_process/src/opencv_process_node.cpp:7:0[m[K:
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:22:5:[m[K [01;36m[Knote: [m[Kprevious specification in ‘[01m[Kd435_subscriber::d435_subscriber(ros::NodeHandle, const string&, const string&, uint32_t)[m[K’ here
+     [01;36m[Kd435_subscriber[m[K(ros::NodeHandle nh, const std::string &RGB_topic, const std::string &Depth_topic, uint32_t queue_size = 10);
+     [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/chshy/ros_ws/opencv/src/opencv_process/src/opencv_process_node.cpp:7:0[m[K:
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:[m[K In constructor ‘[01m[Kd435_subscriber::d435_subscriber(ros::NodeHandle, const string&, const string&, uint32_t)[m[K’:
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:34:93:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid d435_subscriber::RGB_cb(const ConstPtr&)[m[K’
+     ros::Subscriber RGB_sub = nh.subscribe<sensor_msgs::Image>(RGB_topic, queue_size, RGB_cb[01;31m[K)[m[K;
+                                                                                             [01;31m[K^[m[K
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:25:10:[m[K [01;36m[Knote: [m[Kdeclared here
+     void [01;36m[KRGB_cb[m[K(const sensor_msgs::Image::ConstPtr &msg);
+          [01;36m[K^~~~~~[m[K
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:35:99:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid d435_subscriber::Depth_cb(const ConstPtr&)[m[K’
+     ros::Subscriber Depth_sub = nh.subscribe<sensor_msgs::Image>(Depth_topic, queue_size, Depth_cb[01;31m[K)[m[K;
+                                                                                                   [01;31m[K^[m[K
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:26:10:[m[K [01;36m[Knote: [m[Kdeclared here
+     void [01;36m[KDepth_cb[m[K(const sensor_msgs::Image::ConstPtr &msg);
+          [01;36m[K^~~~~~~~[m[K
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:[m[K At global scope:
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:42:65:[m[K [01;31m[Kerror: [m[Kdefault argument given for parameter 1 of ‘[01m[Kcv::Mat d435_subscriber::getCam(D435_Cam_Type)[m[K’ [[01;31m[K-fpermissive[m[K]
+ cv::Mat d435_subscriber::getCam(D435_Cam_Type cam = D435_RGB_Cam[01;31m[K)[m[K
+                                                                 [01;31m[K^[m[K
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/include/opencv_process/d435_subscriber.hpp:24:13:[m[K [01;36m[Knote: [m[Kprevious specification in ‘[01m[Kcv::Mat d435_subscriber::getCam(D435_Cam_Type)[m[K’ here
+     cv::Mat [01;36m[KgetCam[m[K(D435_Cam_Type cam = D435_RGB_Cam);
+             [01;36m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/opencv_process_node.dir/src/opencv_process_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/opencv_process_node.dir/all] Error 2
+make: *** [all] Error 2

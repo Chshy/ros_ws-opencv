@@ -1,0 +1,7 @@
+[01m[K/home/chshy/ros_ws/opencv/src/opencv_process/src/opencv_process_node.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Kinclude/d435_subscriber.hpp: 没有那个文件或目录
+ #include [01;31m[K<include/d435_subscriber.hpp>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/opencv_process_node.dir/src/opencv_process_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/opencv_process_node.dir/all] Error 2
+make: *** [all] Error 2
