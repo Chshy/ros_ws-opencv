@@ -40,7 +40,7 @@ public:
 // 构造函数
 d435_subscriber::d435_subscriber(ros::NodeHandle &_nh,
                                  const std::string &RGB_topic = "/camera/color/image_raw",
-                                 const std::string &Depth_topic = "/camera/depth/image_rect_raw",
+                                 const std::string &Depth_topic = "/camera/aligned_depth_to_color/image_raw",
                                  uint32_t queue_size = 10)
                                  
                                 : RGB_sub(_nh, RGB_topic, queue_size, sensor_msgs::image_encodings::BGR8)
