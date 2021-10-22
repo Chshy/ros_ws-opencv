@@ -9,24 +9,22 @@
 class image_converter
 {
 private:
-    ros::NodeHandle nh;
-    ros::Subscriber ros_topic_sub;
-    std::string converted_format;
-
-    sensor_msgs::Image ros_img;
-    cv::Mat cv_img;
-
-    uint32_t ros_img_ind;
-    uint32_t cv_img_ind;
-    bool cv_img_read;
+    ros::NodeHandle nh;            //ROS句柄
+    ros::Subscriber ros_topic_sub; //订阅的ROS Topic
+    std::string converted_format;  //转换的目标格式
+    sensor_msgs::Image ros_img;    //存储ROS格式图像
+    cv::Mat cv_img;                //存储OpenCV格式图像
+    uint32_t ros_img_ind;          //ROS格式图像序号
+    uint32_t cv_img_ind;           //OpenCV格式图像序号
+    bool cv_img_read;              //本帧图像既阅标记
 
 public:
     image_converter(ros::NodeHandle &_nh, const std::string &_topic, uint32_t queue_size, const std::string &_format);
     ~image_converter();
-    void img_cb(const sensor_msgs::Image::ConstPtr &msg);
-    void convert();
-    cv::Mat get_cv_img(bool do_convert, bool do_mark);
-    bool new_img_come();
+    void img_cb(const sensor_msgs::Image::ConstPtr &msg); //ROS Topic 回调函数（立刻更新ROS格式图像）
+    void convert();                                       //格式转换为OpenCV（将OpenCV格式图像同步为ROS同一帧）
+    cv::Mat get_cv_img(bool do_convert, bool do_mark);    //获取显示图像
+    bool new_img_come();                                  //检查是否有新图像到来（ROS图像序号大于OpenCV图像）
 };
 
 image_converter::image_converter(ros::NodeHandle &_nh,
@@ -47,7 +45,6 @@ image_converter::image_converter(ros::NodeHandle &_nh,
 image_converter::~image_converter()
 {
 }
-
 
 void image_converter::img_cb(const sensor_msgs::Image::ConstPtr &msg)
 {
