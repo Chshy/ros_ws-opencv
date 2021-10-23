@@ -28,6 +28,7 @@ public:
 
     d435_subscriber(ros::NodeHandle &_nh, const std::string &RGB_topic, const std::string &Depth_topic, uint32_t queue_size);
     ~d435_subscriber();
+    bool new_img_pair_come();
     cv::Mat getCam(D435_Cam_Type cam, uint16_t dep_mindst, uint16_t dep_maxdst);
     cv::Mat getDepDisplay(cv::Mat dep_16uc1);
 };
@@ -54,6 +55,11 @@ d435_subscriber::~d435_subscriber()
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+bool d435_subscriber::new_img_pair_come()
+{
+    return (RGB_sub.new_img_come() && Depth_sub.new_img_come());
+}
 
 // 提取图像
 cv::Mat d435_subscriber::getCam(D435_Cam_Type cam, uint16_t dep_mindst = 0, uint16_t dep_maxdst = 6000)
