@@ -36,5 +36,7 @@ cv::Mat get_display_img(cv::Mat dep_32fc1, float min_distance, float max_distanc
     channels_hsv.push_back(dep_8uc1);
     channels_hsv.push_back(full_ch);
     channels_hsv.push_back(valve_cover);
+    cv::merge(channels_hsv, Dep_HSV);
+    cv::cvtColor(Dep_HSV, Dep_HSV, CV_HSV2BGR);
     return Dep_HSV;
 }
